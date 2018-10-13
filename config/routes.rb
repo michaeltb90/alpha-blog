@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
 
   resources :articles
+  
+  get 'signup', to: 'users#new'
+  # post 'users', to: 'users#create'  #<-- this can be used or the one below which is active
+  resources :users, except: [:new]
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
